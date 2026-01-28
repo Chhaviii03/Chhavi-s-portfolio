@@ -27,7 +27,11 @@ const ContactMe = () => {
     setStatus({ type: null, message: '' })
 
     try {
-      const response = await axios.post('/api/contact', formData)
+      const response = await axios.post(
+        'https://portfolio-backend-isk0.onrender.com/api/contact',
+        formData
+      )
+      
       setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {
