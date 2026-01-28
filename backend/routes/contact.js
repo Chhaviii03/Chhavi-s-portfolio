@@ -4,6 +4,7 @@ import { sendEmailNotification } from '../utils/emailService.js'
 const router = express.Router()
 
 router.post('/', async (req, res) => {
+  console.log('🔥 /api/contact hit', req.body)
   try {
     const { name, email, message } = req.body
 
