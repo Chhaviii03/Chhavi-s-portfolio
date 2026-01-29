@@ -30,7 +30,7 @@ const SectionDivider = ({ direction = 'right' }) => {
     animate: {
       x: direction === 'right' ? '150%' : '-150%',
       transition: {
-        duration: 8,
+        duration: 6,
         ease: 'linear',
       },
     },

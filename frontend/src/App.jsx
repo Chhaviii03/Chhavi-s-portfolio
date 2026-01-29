@@ -4,7 +4,6 @@ import BackgroundParticles from './components/BackgroundParticles'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import ScrollProgressAndBackTop from './components/ScrollProgressAndBackTop'
-import SectionDivider from './components/SectionDivider'
 import About from './sections/About'
 import Achievements from './sections/Achievements'
 import ContactMe from './sections/ContactMe'
@@ -44,17 +43,11 @@ function App() {
       <ScrollProgressAndBackTop />
       <Navbar activeSection={activeSection} />
       <About />
-      <SectionDivider direction="left" />
       <Projects />
-      <SectionDivider direction="right" />
       <TechnicalSkills />
-      <SectionDivider direction="right" />
       <Achievements />
-      <SectionDivider direction="right" />
       <PositionsOfResponsibility />
-      <SectionDivider direction="left" />
       <Education />
-      <SectionDivider direction="right" />
       <ContactMe />
       <Footer />
     </div>

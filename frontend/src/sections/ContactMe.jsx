@@ -1,11 +1,12 @@
 import axios from 'axios'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { FaCheckCircle, FaExclamationCircle, FaPaperPlane } from 'react-icons/fa'
-import AnimatedHeading from '../components/AnimatedHeading'
+import SectionIntro from '../components/SectionIntro'
 
 const ContactMe = () => {
   const [headingComplete, setHeadingComplete] = useState(false)
+  const sectionRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,25 +46,15 @@ const ContactMe = () => {
   }
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-bg flex items-center">
+    <section ref={sectionRef} id="contact" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-bg flex items-center">
       <div className="max-w-2xl mx-auto w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <AnimatedHeading
-            text="Contact Me"
-            direction="left"
-            className="text-4xl md:text-5xl font-heading font-bold text-white mb-4"
-            onAnimationComplete={() => setHeadingComplete(true)}
-          />
-          <p className="text-gray-soft text-lg">
-            Let's connect and build something amazing together
-          </p>
-        </motion.div>
+        <SectionIntro
+          sectionRef={sectionRef}
+          title="Contact Me"
+          introText="Let's connect and build something amazing together."
+          onAnimationComplete={() => setHeadingComplete(true)}
+        />
+        <div className="mb-12" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

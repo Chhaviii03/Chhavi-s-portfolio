@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { FaBuilding, FaCalendarAlt, FaUserTie } from 'react-icons/fa'
-import AnimatedHeading from '../components/AnimatedHeading'
+import { useRef, useState } from 'react'
+import { FaBuilding, FaCalendarAlt } from 'react-icons/fa'
+import SectionIntro from '../components/SectionIntro'
 
 const PositionsOfResponsibility = () => {
   const [headingComplete, setHeadingComplete] = useState(false)
+  const sectionRef = useRef(null)
   const positions = [
     {
       role: 'General Secretary',
@@ -52,25 +53,14 @@ const PositionsOfResponsibility = () => {
   }
 
   return (
-    <section id="positions" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-bg">
+    <section ref={sectionRef} id="positions" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-bg">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <AnimatedHeading
-            text="Positions of Responsibility"
-            direction="right"
-            className="text-4xl md:text-5xl font-heading font-bold text-white mb-4"
-            onAnimationComplete={() => setHeadingComplete(true)}
-          />
-          <p className="text-gray-soft text-lg max-w-2xl mx-auto mt-6">
-            Leadership roles and organizational responsibilities
-          </p>
-        </motion.div>
+        <SectionIntro
+          sectionRef={sectionRef}
+          title="Positions of Responsibility"
+          introText="Leadership roles and organizational responsibilities."
+          onAnimationComplete={() => setHeadingComplete(true)}
+        />
 
         <motion.div
           variants={containerVariants}

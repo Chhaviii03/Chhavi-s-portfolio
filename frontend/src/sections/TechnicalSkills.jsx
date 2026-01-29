@@ -1,23 +1,24 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { 
-  SiCplusplus, 
-  SiPython, 
-  SiC, 
-  SiReact, 
-  SiNodedotjs, 
-  SiFlask, 
-  SiMongodb, 
-  SiMysql, 
-  SiDocker, 
-  SiGithubactions,
-  SiPytorch
+import { useRef, useState } from 'react'
+import { FaBrain, FaDatabase, FaMicrophone } from 'react-icons/fa'
+import {
+    SiC,
+    SiCplusplus,
+    SiDocker,
+    SiFlask,
+    SiGithubactions,
+    SiMongodb,
+    SiMysql,
+    SiNodedotjs,
+    SiPython,
+    SiPytorch,
+    SiReact
 } from 'react-icons/si'
-import { FaBrain, FaMicrophone, FaDatabase } from 'react-icons/fa'
-import AnimatedHeading from '../components/AnimatedHeading'
+import SectionIntro from '../components/SectionIntro'
 
 const TechnicalSkills = () => {
   const [headingComplete, setHeadingComplete] = useState(false)
+  const sectionRef = useRef(null)
   
   const skills = [
     { name: 'C++', Icon: SiCplusplus },
@@ -40,25 +41,14 @@ const TechnicalSkills = () => {
   const duplicatedSkills = [...skills, ...skills]
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black-bg overflow-hidden">
+    <section ref={sectionRef} id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black-bg overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <AnimatedHeading
-            text="Technical Skills"
-            direction="right"
-            className="text-4xl md:text-5xl font-heading font-bold text-white mb-4"
-            onAnimationComplete={() => setHeadingComplete(true)}
-          />
-          <p className="text-gray-soft text-lg max-w-2xl mx-auto">
-            Technologies and tools I work with
-          </p>
-        </motion.div>
+        <SectionIntro
+          sectionRef={sectionRef}
+          title="Technical Skills"
+          introText="Technologies and tools I work with."
+          onAnimationComplete={() => setHeadingComplete(true)}
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

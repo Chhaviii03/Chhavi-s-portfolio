@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import AnimatedHeading from '../components/AnimatedHeading'
+import { useRef, useState } from 'react'
+import SectionIntro from '../components/SectionIntro'
 
 const education = [
   {
@@ -22,6 +22,7 @@ const education = [
 
 const Education = () => {
   const [headingComplete, setHeadingComplete] = useState(false)
+  const sectionRef = useRef(null)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,25 +47,14 @@ const Education = () => {
   }
 
   return (
-    <section id="education" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-near">
+    <section ref={sectionRef} id="education" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-near">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <AnimatedHeading
-            text="Education"
-            direction="left"
-            className="text-4xl md:text-5xl font-heading font-bold text-white mb-4"
-            onAnimationComplete={() => setHeadingComplete(true)}
-          />
-          <p className="text-gray-soft text-lg max-w-2xl mx-auto">
-            Academic background
-          </p>
-        </motion.div>
+        <SectionIntro
+          sectionRef={sectionRef}
+          title="Education"
+          introText="Academic background."
+          onAnimationComplete={() => setHeadingComplete(true)}
+        />
 
         <motion.div
           variants={containerVariants}
