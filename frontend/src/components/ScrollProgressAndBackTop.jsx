@@ -31,7 +31,7 @@ export default function ScrollProgressAndBackTop() {
         aria-hidden
       >
         <div
-          className="h-full bg-gradient-to-r from-pink-primary to-pink-primary/70 transition-[width] duration-150 ease-out"
+          className="h-full bg-pink-primary/80 transition-[width] duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -41,10 +41,9 @@ export default function ScrollProgressAndBackTop() {
         <button
           type="button"
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-[55] w-12 h-12 rounded-full border-2 border-pink-primary/50 
+          className="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-[55] w-10 h-10 rounded-full border border-pink-primary/40 
                      bg-black-bg/90 backdrop-blur-sm flex items-center justify-center
-                     shadow-[0_0_20px_rgba(255,77,141,0.3)] hover:shadow-[0_0_28px_rgba(255,77,141,0.5)]
-                     transition-all duration-300 hover:border-pink-primary/80 focus:outline-none focus:ring-2 focus:ring-pink-primary/50"
+                     hover:border-pink-primary/60 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-primary/40"
           aria-label="Back to top"
         >
           <svg

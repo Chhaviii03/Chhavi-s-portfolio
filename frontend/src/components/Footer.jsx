@@ -4,32 +4,27 @@ import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 const Footer = () => {
   return (
     <footer 
-      className="py-12 px-4 sm:px-6 lg:px-8 relative"
-      style={{ 
-        backgroundColor: '#000000',
-        zIndex: 30,
-        borderTop: '1px solid rgba(255, 77, 141, 0.1)'
-      }}
+      className="py-10 px-4 sm:px-6 lg:px-8 relative border-t border-pink-primary/10 bg-black-bg"
+      style={{ zIndex: 30 }}
     >
-      <div className="max-w-4xl mx-auto text-center space-y-6">
+      <div className="max-w-4xl mx-auto text-center space-y-5">
         {/* Line 1: Primary CTA */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-gray-soft text-lg"
+          className="text-gray-soft text-base leading-relaxed"
         >
           Want to connect with me on other platforms?
         </motion.p>
 
-        {/* Line 2: Secondary CTA */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-gray-soft text-base"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-gray-soft text-sm leading-relaxed"
         >
           You can reach out to me here 👇
         </motion.p>
@@ -47,46 +42,46 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-primary hover:text-pink-primary/80 transition-colors cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             aria-label="LinkedIn Profile"
             title="LinkedIn"
           >
-            <FaLinkedin className="text-3xl drop-shadow-[0_0_8px_rgba(255,77,141,0.6)]" />
+            <FaLinkedin className="text-2xl text-pink-primary" />
           </motion.a>
           <motion.a
             href="https://github.com/Chhaviii03"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-primary hover:text-pink-primary/80 transition-colors cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             aria-label="GitHub Profile"
             title="GitHub"
           >
-            <FaGithub className="text-3xl drop-shadow-[0_0_8px_rgba(255,77,141,0.6)]" />
+            <FaGithub className="text-2xl text-pink-primary" />
           </motion.a>
           <motion.a
             href="https://www.instagram.com/_.simply_insane._/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-primary hover:text-pink-primary/80 transition-colors cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             aria-label="Instagram Profile"
             title="Instagram"
           >
-            <FaInstagram className="text-3xl drop-shadow-[0_0_8px_rgba(255,77,141,0.6)]" />
+            <FaInstagram className="text-2xl text-pink-primary" />
           </motion.a>
           <motion.a
             href="mailto:chhavipradeepbhatt@gmail.com"
             className="text-pink-primary hover:text-pink-primary/80 transition-colors cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             aria-label="Send Email"
             title="Email"
           >
-            <FaEnvelope className="text-3xl drop-shadow-[0_0_8px_rgba(255,77,141,0.6)]" />
+            <FaEnvelope className="text-2xl text-pink-primary" />
           </motion.a>
         </motion.div>
 

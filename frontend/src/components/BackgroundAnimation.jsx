@@ -37,8 +37,8 @@ const BackgroundAnimation = () => {
           width: '420px',
           height: '420px',
           borderRadius: '50%',
-          background: 'rgba(255, 77, 141, 0.18)',
-          filter: 'blur(90px)',
+          background: 'rgba(255, 77, 141, 0.22)',
+          filter: 'blur(80px)',
         }}
       />
 
@@ -61,8 +61,8 @@ const BackgroundAnimation = () => {
           width: '380px',
           height: '380px',
           borderRadius: '50%',
-          background: 'rgba(255, 77, 141, 0.15)',
-          filter: 'blur(90px)',
+          background: 'rgba(255, 77, 141, 0.18)',
+          filter: 'blur(80px)',
         }}
       />
 
@@ -85,8 +85,8 @@ const BackgroundAnimation = () => {
           width: '320px',
           height: '320px',
           borderRadius: '50%',
-          background: 'rgba(255, 77, 141, 0.12)',
-          filter: 'blur(90px)',
+          background: 'rgba(255, 77, 141, 0.14)',
+          filter: 'blur(80px)',
         }}
       />
     </div>

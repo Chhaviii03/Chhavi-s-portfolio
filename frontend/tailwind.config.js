@@ -18,8 +18,9 @@ export default {
         'body': ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'pink-glow': '0 0 20px rgba(255, 77, 141, 0.5)',
-        'pink-glow-lg': '0 0 30px rgba(255, 77, 141, 0.7)',
+        'pink-glow': '0 0 16px rgba(255, 77, 141, 0.25)',
+        'pink-glow-lg': '0 0 24px rgba(255, 77, 141, 0.35)',
+        'card-glow': '0 0 0 1px rgba(255, 77, 141, 0.2), 0 0 14px rgba(255, 77, 141, 0.12)',
       },
     },
   },

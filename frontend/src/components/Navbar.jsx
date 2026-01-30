@@ -33,16 +33,16 @@ const Navbar = ({ activeSection }) => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black-bg/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
+        isScrolled ? 'bg-black-bg/90 backdrop-blur-sm border-b border-white/5' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto pl-2 pr-4 sm:pl-3 sm:pr-6 lg:pl-4 lg:pr-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
             <motion.div
-              className="text-2xl font-heading font-bold text-white"
-              whileHover={{ scale: 1.05 }}
+              className="text-xl font-heading font-bold text-white"
+              whileHover={{ scale: 1.02 }}
             >
               CB
             </motion.div>
@@ -68,8 +68,8 @@ const Navbar = ({ activeSection }) => {
                     ? 'text-pink-primary'
                     : 'text-gray-soft hover:text-white'
                 }`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {item.label}
                 {activeSection === item.id && (

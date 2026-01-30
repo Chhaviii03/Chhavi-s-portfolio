@@ -46,7 +46,7 @@ const ContactMe = () => {
   }
 
   return (
-    <section ref={sectionRef} id="contact" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-bg flex items-center">
+    <section ref={sectionRef} id="contact" className="min-h-screen py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black-bg flex items-center">
       <div className="max-w-2xl mx-auto w-full">
         <SectionIntro
           sectionRef={sectionRef}
@@ -54,16 +54,16 @@ const ContactMe = () => {
           introText="Let's connect and build something amazing together."
           onAnimationComplete={() => setHeadingComplete(true)}
         />
-        <div className="mb-12" />
+        <div className="mb-10" />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={headingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="bg-black-near rounded-2xl p-8 border border-pink-primary/20 
-                   hover:border-pink-primary/50 transition-all duration-300"
+          initial={{ opacity: 0, y: 16 }}
+          animate={headingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="bg-black-near rounded-xl p-6 md:p-8 border border-pink-primary/20 
+                   hover:border-pink-primary/35 hover:shadow-card-glow transition-all duration-200"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label htmlFor="name" className="block text-white font-medium mb-2">
                 Name
@@ -140,11 +140,11 @@ const ContactMe = () => {
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-8 py-4 bg-pink-primary text-white font-semibold rounded-lg 
-                       hover:shadow-pink-glow-lg transition-all duration-300 flex items-center 
+              className="w-full px-6 py-3.5 bg-pink-primary text-white font-semibold rounded-lg text-sm
+                       hover:shadow-pink-glow transition-shadow duration-200 flex items-center 
                        justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.99 }}
             >
               {isSubmitting ? (
                 <>

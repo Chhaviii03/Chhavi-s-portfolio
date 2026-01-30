@@ -41,7 +41,7 @@ const TechnicalSkills = () => {
   const duplicatedSkills = [...skills, ...skills]
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black-bg overflow-hidden">
+    <section ref={sectionRef} id="skills" className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black-bg overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionIntro
           sectionRef={sectionRef}
@@ -56,9 +56,8 @@ const TechnicalSkills = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="relative"
         >
-          {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black-bg to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black-bg to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black-bg to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black-bg to-transparent z-10 pointer-events-none" />
 
           <div className="overflow-hidden">
             <motion.div
@@ -81,12 +80,12 @@ const TechnicalSkills = () => {
                 return (
                   <motion.div
                     key={`${skill.name}-${index}`}
-                    className="flex-shrink-0 w-48 h-32 rounded-xl bg-black-near border border-pink-primary/20 
-                             flex flex-col items-center justify-center gap-3 hover:border-pink-primary/50 
-                             hover:shadow-pink-glow transition-all duration-300 group"
-                    whileHover={{ scale: 1.1, y: -5 }}
+                    className="flex-shrink-0 w-44 h-28 rounded-lg bg-black-near border border-pink-primary/15 
+                             flex flex-col items-center justify-center gap-2 hover:border-pink-primary/40 
+                             hover:shadow-card-glow transition-all duration-200 group"
+                    whileHover={{ scale: 1.03, y: -2 }}
                   >
-                    <IconComponent className="text-4xl text-pink-primary group-hover:scale-110 transition-transform" />
+                    <IconComponent className="text-3xl text-pink-primary group-hover:opacity-90 transition-opacity" />
                     <span className="text-white font-medium text-sm group-hover:text-pink-primary transition-colors">
                       {skill.name}
                     </span>
@@ -99,26 +98,26 @@ const TechnicalSkills = () => {
 
         {/* Additional static grid for mobile */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={headingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="md:hidden mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4"
+          initial={{ opacity: 0, y: 16 }}
+          animate={headingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="md:hidden mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3"
         >
           {skills.map((skill, index) => {
             const IconComponent = skill.Icon
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="rounded-xl bg-black-near border border-pink-primary/20 p-4 
-                         flex flex-col items-center justify-center gap-2 hover:border-pink-primary/50 
-                         hover:shadow-pink-glow transition-all duration-300"
+                transition={{ delay: index * 0.04 }}
+                className="rounded-lg bg-black-near border border-pink-primary/15 p-3 
+                         flex flex-col items-center justify-center gap-1.5 hover:border-pink-primary/35 
+                         hover:shadow-card-glow transition-all duration-200"
               >
-                <IconComponent className="text-3xl text-pink-primary" />
-                <span className="text-white font-medium text-xs text-center">{skill.name}</span>
+                <IconComponent className="text-2xl text-pink-primary" />
+                <span className="text-white font-medium text-xs text-center leading-tight">{skill.name}</span>
               </motion.div>
             )
           })}

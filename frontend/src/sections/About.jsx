@@ -27,9 +27,9 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+    <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-16">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left Column - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -39,10 +39,10 @@ const About = () => {
           >
             {/* Name */}
             <motion.h1
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6, ease: 'easeOut' }}
-              className="text-4xl md:text-5xl lg:text-6xl font-hero font-semibold text-white leading-tight tracking-tight whitespace-nowrap"
+              transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
+              className="text-4xl md:text-5xl lg:text-6xl font-hero font-semibold text-white leading-[1.15] tracking-tight whitespace-nowrap"
             >
               CHHAVI BHATT
             </motion.h1>
@@ -79,14 +79,14 @@ const About = () => {
 
             {/* Download Resume Button */}
             <motion.button
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.6, ease: 'easeOut' }}
+              transition={{ delay: 0.7, duration: 0.5, ease: 'easeOut' }}
               onClick={handleDownloadResume}
-              className="px-8 py-4 bg-pink-primary text-white font-semibold rounded-lg 
-                         hover:shadow-pink-glow-lg transition-all duration-300 mt-6"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-7 py-3.5 bg-pink-primary text-white font-semibold rounded-lg text-sm
+                         hover:shadow-pink-glow transition-shadow duration-200 mt-6"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Download Resume
             </motion.button>
@@ -101,12 +101,12 @@ const About = () => {
           >
             <motion.div
               className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-primary/20 to-pink-primary/5 blur-2xl"></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-pink-primary/30 
-                            shadow-pink-glow hover:shadow-pink-glow-lg transition-shadow duration-300 bg-black-bg">
+              <div className="absolute inset-0 rounded-full bg-pink-primary/10 blur-2xl"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-pink-primary/25 
+                            bg-black-bg transition-shadow duration-200 hover:shadow-pink-glow">
                 <div className="w-full h-full bg-black-bg flex items-center justify-center">
                   {imageSrc && !imageError ? (
                     <img

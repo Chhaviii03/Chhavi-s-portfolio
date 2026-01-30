@@ -102,7 +102,7 @@ const Projects = () => {
   }, [goNext, goPrev])
 
   return (
-    <section ref={sectionRef} id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-near">
+    <section ref={sectionRef} id="projects" className="min-h-screen py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black-near">
       <div className="max-w-7xl mx-auto">
         <SectionIntro
           sectionRef={sectionRef}
@@ -116,13 +116,12 @@ const Projects = () => {
           <button
             type="button"
             onClick={goPrev}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full
                        items-center justify-center text-pink-primary
-                       bg-transparent border border-pink-primary/50
+                       bg-black-bg/80 border border-pink-primary/40
                        opacity-0 group-hover/carousel:opacity-100
-                       hover:border-pink-primary/70 hover:shadow-[0_0_20px_rgba(255,77,141,0.2)]
-                       transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-primary/50
-                       -translate-x-2 md:-translate-x-4"
+                       hover:border-pink-primary/60 transition-colors duration-200
+                       focus:outline-none focus:ring-2 focus:ring-pink-primary/40 -translate-x-2 md:-translate-x-4"
             aria-label="Previous project"
           >
             <FaChevronLeft className="w-5 h-5" />
@@ -132,13 +131,12 @@ const Projects = () => {
           <button
             type="button"
             onClick={goNext}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full
                        items-center justify-center text-pink-primary
-                       bg-transparent border border-pink-primary/50
+                       bg-black-bg/80 border border-pink-primary/40
                        opacity-0 group-hover/carousel:opacity-100
-                       hover:border-pink-primary/70 hover:shadow-[0_0_20px_rgba(255,77,141,0.2)]
-                       transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-primary/50
-                       translate-x-2 md:translate-x-4"
+                       hover:border-pink-primary/60 transition-colors duration-200
+                       focus:outline-none focus:ring-2 focus:ring-pink-primary/40 translate-x-2 md:translate-x-4"
             aria-label="Next project"
           >
             <FaChevronRight className="w-5 h-5" />
@@ -174,20 +172,19 @@ const Projects = () => {
                     transition={{ duration: 0.45, ease: 'easeInOut' }}
                   >
                     <div
-                      className={`group relative h-full bg-black-bg rounded-[16px] p-6 cursor-pointer overflow-hidden
-                                 border transition-all duration-300
+                      className={`group relative h-full bg-black-bg rounded-xl p-5 md:p-6 cursor-pointer overflow-hidden
+                                 border transition-all duration-200
                                  ${isActive
-                                   ? 'border-[rgba(255,77,141,0.5)] shadow-[0_0_40px_rgba(255,77,141,0.25)]'
-                                   : 'border-[rgba(255,77,141,0.35)]'
+                                   ? 'border-pink-primary/45'
+                                   : 'border-pink-primary/25'
                                  }
-                                 hover:border-pink-primary/50 hover:shadow-pink-glow`}
+                                 hover:border-pink-primary/50 hover:shadow-card-glow`}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-pink-primary/5 to-transparent opacity-0
-                                    group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-pink-primary/[0.03] to-transparent opacity-0
+                                    group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" />
 
-                      <div className="relative mb-6 rounded-lg overflow-hidden bg-black-near
-                                    border border-pink-primary/20 shadow-[0_0_15px_rgba(255,77,141,0.15)]
-                                    group-hover:shadow-[0_0_25px_rgba(255,77,141,0.3)] transition-shadow duration-300">
+                      <div className="relative mb-5 rounded-lg overflow-hidden bg-black-near
+                                    border border-pink-primary/15 transition-colors duration-200 group-hover:border-pink-primary/25">
                         <img
                           src={project.image}
                           alt={`${project.title} architecture`}
@@ -196,17 +193,17 @@ const Projects = () => {
                       </div>
 
                       <div className="relative z-10">
-                        <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-pink-primary transition-colors">
+                        <h3 className="text-xl font-heading font-bold text-white mb-3 group-hover:text-pink-primary transition-colors">
                           {project.title}
                         </h3>
-                        <p className="text-gray-soft mb-6 leading-relaxed line-clamp-4">
+                        <p className="text-gray-soft text-sm mb-4 leading-relaxed line-clamp-4">
                           {project.description}
                         </p>
-                        <div className="flex flex-wrap gap-2 mb-6">
+                        <div className="flex flex-wrap gap-1.5 mb-4">
                           {project.tech.map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="px-3 py-1 text-xs font-medium bg-pink-primary/10 text-pink-primary rounded-full border border-pink-primary/20"
+                              className="px-2.5 py-0.5 text-xs font-medium bg-pink-primary/10 text-pink-primary rounded-full border border-pink-primary/15"
                             >
                               {tech}
                             </span>

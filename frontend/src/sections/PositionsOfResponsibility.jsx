@@ -53,7 +53,7 @@ const PositionsOfResponsibility = () => {
   }
 
   return (
-    <section ref={sectionRef} id="positions" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-black-bg">
+    <section ref={sectionRef} id="positions" className="min-h-screen py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black-bg">
       <div className="max-w-7xl mx-auto">
         <SectionIntro
           sectionRef={sectionRef}
@@ -66,46 +66,44 @@ const PositionsOfResponsibility = () => {
           variants={containerVariants}
           initial="hidden"
           animate={headingComplete ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {positions.map((position, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`group relative bg-black-near rounded-2xl p-8 border border-pink-primary/20 
-                       hover:border-pink-primary/50 transition-all duration-300 overflow-hidden ${
+              className={`group relative bg-black-near rounded-xl p-6 border border-pink-primary/20 
+                       hover:border-pink-primary/35 hover:shadow-card-glow transition-all duration-200 overflow-hidden ${
                          index === 2 && positions.length === 3 ? 'md:col-span-2 md:mx-auto md:max-w-2xl' : ''
                        }`}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{ y: -2 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-primary/5 to-transparent opacity-0 
-                            group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-primary/[0.02] to-transparent opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-200" />
               
               <div className="relative z-10">
-                <div className="flex items-start gap-4 mb-6">
-                  {/* Logo Placeholder */}
-                  <div className="w-16 h-16 rounded-lg bg-black-bg border border-pink-primary/10 flex items-center justify-center opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:border-pink-primary/30 transition-all duration-300">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-black-bg border border-pink-primary/15 flex items-center justify-center opacity-70 group-hover:opacity-100 group-hover:border-pink-primary/25 transition-all duration-200">
                     <span className="text-xs font-bold text-white/60 group-hover:text-pink-primary transition-colors">
                       {position.logo}
                     </span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-heading font-bold text-pink-primary mb-2 group-hover:text-pink-primary/80 
-                                 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-heading font-bold text-pink-primary mb-1 group-hover:text-pink-primary/80 transition-colors">
                       {position.role}
                     </h3>
-                    <div className="flex items-center gap-2 text-white font-semibold text-lg mb-2">
-                      <FaBuilding className="text-pink-primary/70" />
+                    <div className="flex items-center gap-2 text-white font-semibold text-sm mb-1">
+                      <FaBuilding className="text-pink-primary/70 shrink-0" />
                       <span>{position.organization}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-soft text-sm">
-                      <FaCalendarAlt className="text-pink-primary/50" />
+                    <div className="flex items-center gap-2 text-gray-soft text-xs">
+                      <FaCalendarAlt className="text-pink-primary/50 shrink-0" />
                       <span>{position.duration}</span>
                     </div>
                   </div>
                 </div>
                 
-                <p className="text-gray-soft leading-relaxed">
+                <p className="text-gray-soft text-sm leading-relaxed">
                   {position.description}
                 </p>
               </div>
